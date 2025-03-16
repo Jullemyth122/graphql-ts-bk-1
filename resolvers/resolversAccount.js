@@ -1,4 +1,4 @@
-const Account = require('./models/Account');
+const Account = require('../models/Account');
 
 const resolvers = {
   Query: {
@@ -89,4 +89,4 @@ const resolvers = {
   },
 };
 
-module.exports = { resolvers };
+module.exports = resolvers;
