@@ -24,16 +24,16 @@ const resolvers = {
             const newComment = new Comment(input);
             await newComment.save();
             return {
-            success: true,
-            message: 'Comment created successfully',
-            comment: newComment,
+                success: true,
+                message: 'Comment created successfully',
+                comment: newComment,
             };
         } catch (error) {
             console.error('Error creating comment:', error);
             return {
-            success: false,
-            message: 'Error creating comment',
-            comment: null,
+                success: false,
+                message: 'Error creating comment',
+                comment: null,
             };
         }
         },
@@ -41,23 +41,23 @@ const resolvers = {
         try {
             const deletedComment = await Comment.findByIdAndDelete(id);
             if (!deletedComment) {
-            return {
-                success: false,
-                message: 'Comment not found',
-                comment: null,
-            };
+                return {
+                    success: false,
+                    message: 'Comment not found',
+                    comment: null,
+                };
             }
             return {
-            success: true,
-            message: 'Comment deleted successfully',
-            comment: deletedComment,
+                success: true,
+                message: 'Comment deleted successfully',
+                comment: deletedComment,
             };
         } catch (error) {
             console.error('Error deleting comment:', error);
             return {
-            success: false,
-            message: 'Error deleting comment',
-            comment: null,
+                success: false,
+                message: 'Error deleting comment',
+                comment: null,
             };
         }
         },
@@ -66,23 +66,23 @@ const resolvers = {
             const { id, ...updateFields } = input;
             const updatedComment = await Comment.findByIdAndUpdate(id, updateFields, { new: true });
             if (!updatedComment) {
-            return {
-                success: false,
-                message: 'Comment not found',
-                comment: null,
-            };
+                return {
+                    success: false,
+                    message: 'Comment not found',
+                    comment: null,
+                };
             }
             return {
-            success: true,
-            message: 'Comment updated successfully',
-            comment: updatedComment,
+                success: true,
+                message: 'Comment updated successfully',
+                comment: updatedComment,
             };
         } catch (error) {
             console.error('Error updating comment:', error);
             return {
-            success: false,
-            message: 'Error updating comment',
-            comment: null,
+                success: false,
+                message: 'Error updating comment',
+                comment: null,
             };
         }
         },
